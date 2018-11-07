@@ -44,7 +44,20 @@ def todo():
         db.session.commit()
         return redirect('/')
     return render_template('new.html')
-    
+
+# @app.route('/todo/<int:id>/edit')
+# def edit(id):
+#     origin_todo = Todo.query.get(id)
+#     return render_template('edit.html', todo=origin_todo)
+
+# @app.route('/todo/<int:id>/update', methods=['POST'])
+# def update(id):
+#     origin_todo = Todo.query.get(id)
+#     origin_todo.todo = request.form['todo']
+#     origin_todo.deadline = request.form['deadline']
+#     db.session.commit()
+#     return redirect('/')
+
 @app.route('/todo/<int:id>/update', methods=['POST', 'GET'])
 def update(id):
     post_todo = Todo.query.get(id)
@@ -61,3 +74,4 @@ def delete(id):
     db.session.delete(todo)
     db.session.commit()
     return redirect('/')
+    
