@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block bb %}
+    <form action='/todo/update' method='post'>
+      <div class="form-group">
+        <label for="todo">TO DO</label>
+        <input name='todo' type="text" class="form-control" id="todo" placeholder="할일을 적어주세요" value={{todo.todo}}>
+      </div>
+      <div class="form-group">
+        <label for="deadline">Deadline</label>
+        <input name='deadline' type="date" class="form-control" id="deadline" value={{todo.todo}}>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
